@@ -245,6 +245,7 @@ public final class Bootstrap {
 
 
     /**
+     * 初始化守护线程
      * Initialize daemon.
      * @throws Exception Fatal initialization error
      */
@@ -439,6 +440,7 @@ public final class Bootstrap {
         synchronized (daemonLock) {
             if (daemon == null) {
                 // Don't set daemon until init() has completed
+                //不要设置守护线程知道Init（）完成
                 Bootstrap bootstrap = new Bootstrap();
                 try {
                     bootstrap.init();
